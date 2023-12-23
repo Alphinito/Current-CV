@@ -44,6 +44,10 @@
         justify-self: right;
         grid-column: 2/3;
         grid-row: 1/2;
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .card:hover .cloud{
+        transform: translateY(-12px);
     }
 
     .cloud svg {
@@ -54,7 +58,7 @@
         align-self: center;
         grid-column: 1/2;
         grid-row: 1/2;
-        font-size: 48px;
+        font-size: var(--t-extra-large);
     }
 
     .info {

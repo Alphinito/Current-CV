@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/projects/ProjectCard.astro'
+---
+
+<Layout title='Angel Herrera | Projects'>
+    <main>
+		<ProjectCard
+			title='Bufeb'
+			p1='Bufeb es una...'
+			p2='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ratione a voluptates quaerat ipsa nemo! Quasi quaerat id eum autem earum distinctio tempore velit praesentium unde rem, labore nam modi!'
+			p3='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ratione a voluptates quaerat ipsa nemo! Quasi quaerat id eum autem earum distinctio tempore velit praesentium unde rem, labore nam modi!'
+			show={['/me.png','/me3.png','/me3.png','/me3.png']}
+		/>
+		<ProjectCard
+			title='SmartSeller WEB'
+			p1='Bufeb es una...'
+			show={['/me.png','/me3.png','/me3.png','/me3.png']}
+		/>
+		<ProjectCard
+			title='SmartSeller APP'
+			p1='Bufeb es una...'
+			show={['/me.png','/me3.png','/me3.png','/me3.png']}
+		/>
+    </main>
+</Layout>
+
+<style>
+	main {
+		min-width: 24ch;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+		gap: 5rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+</style>

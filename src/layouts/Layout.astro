@@ -12,7 +12,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Esta página es el portafolio web de Miguel Angel Herrera Rodríguez, programador Full Stack, residente en Colombia, Bogotá. También contiene más información: CV Web, información, contacto, consejos" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/me.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,13 +25,23 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
+		--m-border-radius: 20px;
+
+		--t-small: .8rem;
+		--t-medium: 1rem;
+		--t-big: 1.2rem;
+		--t-large: 2rem;
+		--t-extra-large: 3rem;
+
 		--c-gradient-orange: linear-gradient( 111.4deg,  rgba(238,113,113,1) 1%, rgba(246,215,148,1) 58% );
 		--c-gradient-pink: linear-gradient( 58.2deg,  rgba(40,91,212,0.73) -3%, rgba(171,53,163,0.45) 49.3%, rgba(255,204,112,0.37) 97.7% );
 		--c-gradient-blue: linear-gradient(90deg, #5936B4 0%, #362A84 100%);
 		--c-black: #333333;
+		--c-blue: #333333;
+
 		--accent: 103, 80, 255;
 		--accent-light: 125, 105, 255;
-		--accent-dark: 49, 10, 101;
+		--accent-dark: 82, 63, 204;
 		--accent-gradient: linear-gradient(
 			45deg,
 			rgb(var(--accent)),
@@ -41,7 +51,7 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: 'Karla', Arial, Helvetica, sans-serif;
-		background: #f9f9f9;
+		background: #fcfcfc;
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
