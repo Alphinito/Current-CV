@@ -1,0 +1,79 @@
+article{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: min-content;
+    padding: 1rem;
+    gap: 2rem;
+    border-radius: var(--m-border-radius);
+    background-color: rgb(var(--accent-dark));
+}
+h1{
+    font-size: var(--t-extra-big);
+    font-weight: 700;
+    background-color: var(--c-white-t);
+    color: rgb(var(--accent-dark));
+    padding: 0 1rem;
+    border-radius: var(--m-border-radius);
+}
+.description{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+.description p{
+    font-size: var(--t-medium);
+    font-weight: 300;
+}
+.description .paragraph1{
+    font-weight: 500;
+}
+.technologies{
+    grid-column: 1/3;
+    grid-row: 3/4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.technologies .techName{
+    font-size: var(--t-small);
+    font-weight: 500;
+    padding: 4px 8px;
+    border: 3px solid white;
+    border-radius: var(--m-border-radius);
+    background-color: rgb(var(--accent-light));
+}
+.carrouselCont{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    position: relative;
+    height: 400px;
+    align-self: center;
+}
+.swiper{
+    border-radius: var(--m-border-radius);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--c-white-t);
+    border: 3px solid rgb(var(--accent-light));
+    overflow: hidden;
+}
+.h, .v{
+    height: 90%;
+    object-fit: cover;
+}
+
+    /* Mobile */
+@media (max-width: 700px) {
+    .h{
+        height: min-content;
+        width: 100%;
+    }
+    h1{
+        text-align: center;
+    }
+}

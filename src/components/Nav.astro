@@ -1,0 +1,42 @@
+---
+interface Props {
+	currentPage: String;
+}
+
+const { currentPage } = Astro.props;
+---
+<nav>
+    <a href="/" class="prevPage">
+        <svg class="svgIcon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.62 3.81 7.43 8l4.19 4.19-1.53 1.52L4.38 8l5.71-5.71 1.53 1.52z"/></svg>
+    </a>
+    <p class="currentPage">{currentPage}</p>
+</nav>
+
+<style>
+    nav{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding: 2rem;
+        border-radius: var(--m-border-radius);
+        background-color: var(--c-black);
+    }
+    .prevPage{
+        display: flex;
+    }
+    .svgIcon{
+        fill: var(--c-white-t);
+        height: 25px;
+        transition: transform .1s ease-out;
+    }
+    .svgIcon:hover{
+        fill: white;
+        transform: scale(1.1);
+    }
+    .currentPage{
+        font-size: var(--t-big);
+        font-weight: 500;
+        padding: 0 1rem;
+        border-left: 3px solid white;
+    }
+</style>

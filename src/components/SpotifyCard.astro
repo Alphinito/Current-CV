@@ -1,0 +1,101 @@
+---
+//Importamos axios
+// import axios from "axios"
+
+// // Definimos la interfaz para las canciones
+// interface Song {
+//  track: {
+//    name: string;
+//    artists: [{ name: string }];
+//    album: { images: [{ url: string }] };
+//  };
+//  played_at: string;
+// }
+
+// // Usamos la interfaz para tipar la variable songs
+// let songs: Song[] = [];
+
+// // Fetch songs from Spotify API
+// async function fetchSongs() {
+//   try {
+//       const response = await axios.get('https://api.spotify.com/v1/me/player/recently-played?limit=3', {
+//           headers: {
+//               'Authorization': 'undefined',
+//           }
+//       });
+//       songs = response.data.items;
+//   } catch (error) {
+//       console.error(error);
+//   }
+// }
+
+// fetchSongs(); // Llamamos a la función cuando el componente se monta
+---
+<!-- Ahora podemos renderizar nuestras canciones en tarjetas -->
+<article class="spotify-card">
+    <h1>My last 3 songs on Spotify</h1>
+  <!-- {songs.map((song, index) => (
+      <div>
+          <h2>{song.track.name}</h2>
+          <p>{song.track.artists[0].name}</p>
+          <img src={song.track.album.images[0].url} alt={song.track.name} />
+      </div>
+  ))} -->
+    <div class="song">
+        <h2 class="song-name">Song Name</h2>
+        <p class="song-artist">Song Artist</p>
+        <img class="song-img" src='/mex.png' />
+    </div>
+    <div class="song">
+        <h2 class="song-name">Song Name</h2>
+        <p class="song-artist">Song Artist</p>
+        <img class="song-img" src='/mex.png' />
+    </div>
+    <div class="song">
+        <h2 class="song-name">Song Name</h2>
+        <p class="song-artist">Song Artist</p>
+        <img class="song-img" src='/mex.png' />
+    </div>
+</article>
+
+<style>
+    .spotify-card{
+        background-color: var(--c-black);
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        border-radius: var(--m-border-radius);
+    }
+    h1{
+        font-size: var(--t-large);
+        color: greenyellow;
+    }
+    .song{
+        padding: 10px;
+        background-color: green;
+        border-radius: var(--m-border-radius);
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr min-content;
+        grid-template-rows: min-content min-content;
+    }
+    .song-name{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        font-size: var(--t-big);
+    }
+    .song-artist{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        font-size: var(--t-medium);
+    }
+    .song-img{
+        grid-column: 2/3;
+        grid-row: 1/3;
+        width: 60px;
+        height: 60px;
+        border: 3px solid black;
+        border-radius: var(--m-border-radius);
+    }
+</style>

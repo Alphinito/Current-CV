@@ -1,27 +1,45 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/projects/ProjectCard.astro'
+import Layout from '../layouts/Layout.astro'
+import ProjectCard from '../components/projects/ProjectCard'
+import Nav from '../components/Nav.astro';
 ---
 
 <Layout title='Angel Herrera | Projects'>
     <main>
-		<ProjectCard
-			title='Bufeb'
-			p1='Bufeb es una...'
-			p2='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ratione a voluptates quaerat ipsa nemo! Quasi quaerat id eum autem earum distinctio tempore velit praesentium unde rem, labore nam modi!'
-			p3='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ratione a voluptates quaerat ipsa nemo! Quasi quaerat id eum autem earum distinctio tempore velit praesentium unde rem, labore nam modi!'
-			show={['/me.png','/me3.png','/me3.png','/me3.png']}
+		<Nav
+			currentPage='Projects'
 		/>
-		<ProjectCard
-			title='SmartSeller WEB'
-			p1='Bufeb es una...'
-			show={['/me.png','/me3.png','/me3.png','/me3.png']}
-		/>
-		<ProjectCard
-			title='SmartSeller APP'
-			p1='Bufeb es una...'
-			show={['/me.png','/me3.png','/me3.png','/me3.png']}
-		/>
+		<section class="project-cards-cont" transition:animate="slide">
+			<ProjectCard client:load
+				title='SMART SELLER Web'
+				p1='A platform that facilitates data-driven decision making, gathers information from different areas of the company and makes it available to the people who need it in a simple and useful way.'
+				p2='It functions as a CRM, administration module, communication tool, traceability manager, planning tool, data visualization and analysis.'
+				p3='For this purpose, search methods, filtering, roles, teams, charts, analysis and interpretation of the information were used.'
+				p4=''
+				technologies={['JavaScript','React', 'SASS', 'Webpack', 'Babel', 'Node', 'Express', 'MySQL', 'PM2', 'Firebase Cloud Messaging']}
+				projectImages={['/smart-seller/Web (1).png','/smart-seller/Web (2).png','/smart-seller/Web (3).png','/smart-seller/Web (4).png','/smart-seller/Web (5).png','/smart-seller/Web (6).png','/smart-seller/Web (7).png','/smart-seller/Web (8).png','/smart-seller/Web (9).png','/smart-seller/Web (10).png','/smart-seller/Web (11).png','/smart-seller/Web (12).png','/smart-seller/Web (13).png','/smart-seller/Web (14).png','/smart-seller/Web (15).png','/smart-seller/Web (16).png','/smart-seller/Web (17).png']}
+			/>
+			<ProjectCard client:load
+				title='SMART SELLER App'
+				p1='A mobile application designed to facilitate the daily tasks of the specialists in the commercial area, who perform their functions on the street, personally going to the place where customers are located.'
+				p2="The application allows them to plan, record, manage and consult everything related to the management of each client, in addition to having updated information on the company's internal processes in different areas at hand, and thus, offer more accurate services."
+				p3='All this information can also be consulted at a later date on the SMART SELLER website.'
+				p4=''
+				technologies={['Dart','Flutter','Firebase Cloud Messaging']}
+				projectImages={['/smart-seller/App (1).jpg','/smart-seller/App (2).jpg','/smart-seller/App (3).jpg','/smart-seller/App (4).jpg','/smart-seller/App (5).jpg','/smart-seller/App (6).jpg','/smart-seller/App (7).jpg','/smart-seller/App (8).jpg','/smart-seller/App (9).jpg','/smart-seller/App (10).jpg','/smart-seller/App (11).jpg','/smart-seller/App (12).jpg','/smart-seller/App (13).jpg','/smart-seller/App (14).jpg']}
+				perView='2'
+				imgFormat='v'
+			/>
+			<ProjectCard client:load
+				title='Bufeb'
+				p1='A Web platform whose purpose is to facilitate and promote the search and contracting of services of: Musicians, Lawyers, Carpenters, Painters, Programmers and more services that require a lot of time from the moment of the need until the service is obtained.'
+				p2='This benefits both sides:'
+				p3='To the people who provide the service, making it easier for them to work independently, and offering tools that give visibility to their talent. Also by creating strong communities among professional colleagues, with a space to ask questions, give advice, create surveys, and promote learning and best practices.'
+				p4='To customers, saving time and simplifying the search and contact of the services they require, with tools such as: filtering, chat (with tools that facilitate the quotation and contracting), urgency request. In addition to rating systems, comments, portfolio and schedules of the provider to help them make a decision.'
+				technologies={['PHP','Composer','JavaScript','CSS','HTML','MySQL']}
+				projectImages={['/bufeb-portfolio/Bufeb1.png','/bufeb-portfolio/Bufeb2.png','/bufeb-portfolio/Bufeb4.png','/bufeb-portfolio/Bufeb5.png','/bufeb-portfolio/Bufeb3.png','/bufeb-portfolio/Bufeb8.png','/bufeb-portfolio/Bufeb9.png','/bufeb-portfolio/Bufeb6.png','/bufeb-portfolio/Bufeb7.png','/bufeb-portfolio/Bufeb10.png']}
+			/>
+		</section>
     </main>
 </Layout>
 
@@ -32,11 +50,15 @@ import ProjectCard from '../components/projects/ProjectCard.astro'
 		display: flex;
 		flex-direction: column;
 		padding: 1rem;
-		gap: 5rem;
+		gap: 3rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
 		line-height: 1.6;
+		color: white;
+	}
+	.project-cards-cont{
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
 	}
 </style>
