@@ -56,5 +56,42 @@
     justify-items: center;
     grid-template-columns: 1fr;
     height: 100%;
-    padding: 1rem;
+    padding: 2rem;
+}
+
+.estudiosList{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: circle;
+}
+
+.estudio{
+    display: grid;
+    padding-left: 1rem;
+    grid-template-columns: 1fr  1fr;
+    grid-template-rows: repeat(2, min-content);
+    border-left: 1px solid var(--c-white-t);
+}
+
+.title{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font-size: var(--t-medium);
+}
+
+.site{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: var(--t-medium);
+    font-weight: 300;
+}
+
+time{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: end;
+    align-self: flex-end;
+    font-size: var(--t-small);
+    font-weight: 300;
 }

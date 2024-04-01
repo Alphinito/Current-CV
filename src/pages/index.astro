@@ -5,6 +5,7 @@ import TimeCard from '../components/TimeCard.astro';
 import FoldCard from '../components/FoldCard.astro';
 import SpotifyCard from '../components/SpotifyCard.astro';
 import FlipCard from '../components/FlipCard/FlipCard';
+import ContactCard from '../components/ContactCard.astro';
 ---
 
 <Layout title="Angel Herrera | Portfolio">
@@ -37,12 +38,7 @@ import FlipCard from '../components/FlipCard/FlipCard';
 			</div>
 			<div class="col2">
 				<FlipCard client:load/>
-				<Card
-					href=""
-					title="Contacto"
-					body="Redes sociales y correo."
-					
-				/>
+				<ContactCard/>
 				<SpotifyCard>
 				<Card
 					href="https://astro.build/themes/"
