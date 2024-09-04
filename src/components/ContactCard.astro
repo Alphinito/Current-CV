@@ -37,6 +37,7 @@ import CopyEmailButton from './contact/copyEmailButton'
             top: 1rem;
             transform: rotate(-30deg);
             fill: rgb(var(--accent-light));
+            transition: top .3s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .content{
             display: flex;
@@ -71,6 +72,11 @@ import CopyEmailButton from './contact/copyEmailButton'
                     }
                 }
             }
+        }
+    }
+    article:hover{
+        .backgroundIcon{
+            top: 1.5rem;
         }
     }
 </style>

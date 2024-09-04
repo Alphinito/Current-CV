@@ -1,7 +1,7 @@
 .flip-card {
     cursor: pointer;
     background-color: transparent;
-    height: 240px;
+    height: 280px;
     perspective: 1000px;
     color: white;
 }
