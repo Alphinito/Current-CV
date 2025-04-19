@@ -87,11 +87,4 @@ details[open] summary {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-	.company{
-		border-left: 1px solid white;
-		padding-left: 1rem;
-		.company-name{
-			font-size: var(--t-medium);
-		}
-	}
 }

@@ -1,4 +1,5 @@
 import './ExperienceCard.css'
+import SingleCompany from './singleCompany/SingleCompany'
 import { useState, useEffect } from 'preact/hooks'
 
 const ExperienceCard = () => {
@@ -9,20 +10,20 @@ const ExperienceCard = () => {
         setIsOpen(!isOpen)
     }
     useEffect(() => {
-        const arrowElement = document.querySelector('#arrow-id');
-        const titleCont = document.querySelector('#title-cont-id');
+        const arrowElement = document.querySelector('#arrow-id')
+        const titleCont = document.querySelector('#title-cont-id')
         if (isOpen) {
-            arrowElement.classList.add('open');
-            arrowElement.classList.remove('closed');
+            arrowElement.classList.add('open')
+            arrowElement.classList.remove('closed')
             titleCont.classList.add('open')
             titleCont.classList.remove('closed')
         } else {
-            arrowElement.classList.add('closed');
-            arrowElement.classList.remove('open');
+            arrowElement.classList.add('closed')
+            arrowElement.classList.remove('open')
             titleCont.classList.add('closed')
             titleCont.classList.remove('open')
         }
-    }, [isOpen]);
+    }, [isOpen])
     //-------------------------------------------------------------------------------|>>|DRAw
     return(
         <details class="exp-card">
@@ -33,16 +34,20 @@ const ExperienceCard = () => {
                 </div>
             </summary>
             <ul class="body-exp-card">
-                <li>
-                    <div class="company">
-                        <h3 class="company-name">CGA</h3>
-                    </div>
-                </li>
-                <li>
-                    <div class="company">
-                        <h3 class="company-name">MELI</h3>
-                    </div>
-                </li>
+                <SingleCompany 
+                    companyName="Mercado Libre"
+                    dateInit="2024"
+                    dateFinal="Current"
+                    description="kl l ajlskd ji2wiew pxcopow ciojw mosdouwd lñlaw lcewao ldjuaws oeflñawnd kxfl qjwoi ñlvewñioq kmcuier cpqjkcs pqojr"
+                    img="companyResouces/meliIcon.svg"
+                />
+                <SingleCompany 
+                    companyName="CGA"
+                    dateInit="2022"
+                    dateFinal="2023"
+                    description="afklaf aklf akls fakf kalf kasjfajksf jfajksfhasfj hasjfkh"
+                    img="companyResouces/cgaIcon.svg"
+                />
             </ul>
         </details>
     )

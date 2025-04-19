@@ -1,0 +1,12 @@
+.company{
+    border-left: 1px solid white;
+    padding-left: 1rem;
+    .company-logo{
+        right: 0;
+        opacity: .6;
+        width: 5rem;
+    }
+    .company-name{
+        font-size: var(--t-medium);
+    }
+}
