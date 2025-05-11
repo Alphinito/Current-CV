@@ -1,12 +1,18 @@
 .company{
     border-left: 1px solid white;
+    display: grid;
     padding-left: 1rem;
+    grid-template-columns: 1fr 1fr;
     .company-logo{
         right: 0;
         opacity: .6;
-        width: 5rem;
+        height: 3rem;
+        justify-self: end;
     }
     .company-name{
         font-size: var(--t-medium);
+    }
+    .companyDescription{
+        grid-column: 1/3;
     }
 }
