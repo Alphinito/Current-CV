@@ -2,6 +2,57 @@
 import Layout from '../layouts/Layout.astro'
 import ProjectCard from '../components/projects/ProjectCard'
 import Nav from '../components/Nav.astro';
+
+const basePath = import.meta.env.BASE_URL;
+const projectImages = {
+  smartSellerWeb: [
+    `${basePath}smart-seller/Web (1).png`,
+    `${basePath}smart-seller/Web (2).png`,
+    `${basePath}smart-seller/Web (3).png`,
+    `${basePath}smart-seller/Web (4).png`,
+    `${basePath}smart-seller/Web (5).png`,
+    `${basePath}smart-seller/Web (6).png`,
+    `${basePath}smart-seller/Web (7).png`,
+    `${basePath}smart-seller/Web (8).png`,
+    `${basePath}smart-seller/Web (9).png`,
+    `${basePath}smart-seller/Web (10).png`,
+    `${basePath}smart-seller/Web (11).png`,
+    `${basePath}smart-seller/Web (12).png`,
+    `${basePath}smart-seller/Web (13).png`,
+    `${basePath}smart-seller/Web (14).png`,
+    `${basePath}smart-seller/Web (15).png`,
+    `${basePath}smart-seller/Web (16).png`,
+    `${basePath}smart-seller/Web (17).png`,
+  ],
+  smartSellerApp: [
+    `${basePath}smart-seller/App (1).jpg`,
+    `${basePath}smart-seller/App (2).jpg`,
+    `${basePath}smart-seller/App (3).jpg`,
+    `${basePath}smart-seller/App (4).jpg`,
+    `${basePath}smart-seller/App (5).jpg`,
+    `${basePath}smart-seller/App (6).jpg`,
+    `${basePath}smart-seller/App (7).jpg`,
+    `${basePath}smart-seller/App (8).jpg`,
+    `${basePath}smart-seller/App (9).jpg`,
+    `${basePath}smart-seller/App (10).jpg`,
+    `${basePath}smart-seller/App (11).jpg`,
+    `${basePath}smart-seller/App (12).jpg`,
+    `${basePath}smart-seller/App (13).jpg`,
+    `${basePath}smart-seller/App (14).jpg`,
+  ],
+  bufeb: [
+    `${basePath}bufeb-portfolio/Bufeb1.png`,
+    `${basePath}bufeb-portfolio/Bufeb2.png`,
+    `${basePath}bufeb-portfolio/Bufeb4.png`,
+    `${basePath}bufeb-portfolio/Bufeb5.png`,
+    `${basePath}bufeb-portfolio/Bufeb3.png`,
+    `${basePath}bufeb-portfolio/Bufeb8.png`,
+    `${basePath}bufeb-portfolio/Bufeb9.png`,
+    `${basePath}bufeb-portfolio/Bufeb6.png`,
+    `${basePath}bufeb-portfolio/Bufeb7.png`,
+    `${basePath}bufeb-portfolio/Bufeb10.png`,
+  ],
+};
 ---
 
 <Layout title='Angel Herrera | Projects'>
@@ -17,7 +68,7 @@ import Nav from '../components/Nav.astro';
 				p3='For this purpose, search methods, filtering, roles, teams, charts, analysis and interpretation of the information were used.'
 				p4=''
 				technologies={['JavaScript','React', 'SASS', 'Webpack', 'Babel', 'Node', 'Express', 'MySQL', 'PM2', 'Firebase Cloud Messaging']}
-				projectImages={['/smart-seller/Web (1).png','/smart-seller/Web (2).png','/smart-seller/Web (3).png','/smart-seller/Web (4).png','/smart-seller/Web (5).png','/smart-seller/Web (6).png','/smart-seller/Web (7).png','/smart-seller/Web (8).png','/smart-seller/Web (9).png','/smart-seller/Web (10).png','/smart-seller/Web (11).png','/smart-seller/Web (12).png','/smart-seller/Web (13).png','/smart-seller/Web (14).png','/smart-seller/Web (15).png','/smart-seller/Web (16).png','/smart-seller/Web (17).png']}
+				projectImages={projectImages.smartSellerWeb}
 			/>
 			<ProjectCard client:load
 				title='SMART SELLER App'
@@ -26,7 +77,7 @@ import Nav from '../components/Nav.astro';
 				p3='All this information can also be consulted at a later date on the SMART SELLER website.'
 				p4=''
 				technologies={['Dart','Flutter','Firebase Cloud Messaging']}
-				projectImages={['/smart-seller/App (1).jpg','/smart-seller/App (2).jpg','/smart-seller/App (3).jpg','/smart-seller/App (4).jpg','/smart-seller/App (5).jpg','/smart-seller/App (6).jpg','/smart-seller/App (7).jpg','/smart-seller/App (8).jpg','/smart-seller/App (9).jpg','/smart-seller/App (10).jpg','/smart-seller/App (11).jpg','/smart-seller/App (12).jpg','/smart-seller/App (13).jpg','/smart-seller/App (14).jpg']}
+				projectImages={projectImages.smartSellerApp}
 				perView='2'
 				imgFormat='v'
 			/>
@@ -37,7 +88,7 @@ import Nav from '../components/Nav.astro';
 				p3='To the people who provide the service, making it easier for them to work independently, and offering tools that give visibility to their talent. Also by creating strong communities among professional colleagues, with a space to ask questions, give advice, create surveys, and promote learning and best practices.'
 				p4='To customers, saving time and simplifying the search and contact of the services they require, with tools such as: filtering, chat (with tools that facilitate the quotation and contracting), urgency request. In addition to rating systems, comments, portfolio and schedules of the provider to help them make a decision.'
 				technologies={['PHP','Composer','JavaScript','CSS','HTML','MySQL']}
-				projectImages={['/bufeb-portfolio/Bufeb1.png','/bufeb-portfolio/Bufeb2.png','/bufeb-portfolio/Bufeb4.png','/bufeb-portfolio/Bufeb5.png','/bufeb-portfolio/Bufeb3.png','/bufeb-portfolio/Bufeb8.png','/bufeb-portfolio/Bufeb9.png','/bufeb-portfolio/Bufeb6.png','/bufeb-portfolio/Bufeb7.png','/bufeb-portfolio/Bufeb10.png']}
+				projectImages={projectImages.bufeb}
 			/>
 		</section>
     </main>
