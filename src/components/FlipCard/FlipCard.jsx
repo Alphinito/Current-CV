@@ -27,9 +27,9 @@ const FlipCard = () => {
                         <ul className="estudiosList">
                             <li>
                                 <div className="estudio">
-                                    <h2 className="title">Análisis y desarrollo de sistemas de información (ADSI)</h2>
-                                    <p className="site">SENA</p>
-                                    <time datetime="2008-02-14 00:00">2021 - 2023</time>
+                                    <h2 className="title">Ing. Sistemas</h2>
+                                    <p className="site">Universidad EAN</p>
+                                    <time datetime="2008-02-14 00:00">2024 - 2028</time>
                                 </div>
                             </li>
                             <li>
@@ -37,6 +37,13 @@ const FlipCard = () => {
                                     <h2 className="title">Gestión de proyectos de Google</h2>
                                     <p className="site">Coursera, Google</p>
                                     <time datetime="2008-02-14 00:00">2023 - 2024</time>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="estudio">
+                                    <h2 className="title">Análisis y desarrollo de sistemas de información (ADSI)</h2>
+                                    <p className="site">SENA</p>
+                                    <time datetime="2008-02-14 00:00">2021 - 2023</time>
                                 </div>
                             </li>
                         </ul>
