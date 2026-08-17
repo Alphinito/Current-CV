@@ -3,7 +3,10 @@ import Layout from '../layouts/Layout.astro'
 import ProjectCard from '../components/projects/ProjectCard'
 import Nav from '../components/Nav.astro';
 
-const basePath = import.meta.env.BASE_URL;
+const basePath = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
 const projectImages = {
   smartSellerWeb: [
     `${basePath}smart-seller/Web (1).png`,
