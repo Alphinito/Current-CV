@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import TimeCard from '../components/TimeCard.astro';
 import FoldCard from '../components/FoldCard.astro';
-import SpotifyCard from '../components/SpotifyCard.astro';
+import SpotifyCard from '../components/spotify/SpotifyCard.astro';
 import FlipCard from '../components/FlipCard/FlipCard';
 import ContactCard from '../components/ContactCard.astro';
 import ExperienceCard from '../components/experienceCard/ExperienceCard'
@@ -25,23 +25,11 @@ import ExperienceCard from '../components/experienceCard/ExperienceCard'
 				/>
 				<ExperienceCard client:load/>
 				<TimeCard/>
-				<Card
-					href=""
-					title="Stack"
-					body="Información media: [design]"
-					
-				/>
 			</div>
 			<div class="col2">
 				<FlipCard client:load/>
 				<ContactCard/>
-				<SpotifyCard>
-				<Card
-					href="https://astro.build/themes/"
-					title="Resume/CV"
-					body="Un copi paste de mi CV pero con estética de Discord y descargable de PDF TYPE LINK."
-					
-				/>
+				<SpotifyCard />
 			</div>
 		</ul>
 		<section class="introduce">
