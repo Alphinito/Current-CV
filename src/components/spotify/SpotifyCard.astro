@@ -10,6 +10,10 @@ type SpotifyTrack = {
   album?: { images?: Array<{ url?: string }> };
 };
 
+type RecentlyPlayedItem = {
+  track?: SpotifyTrack;
+};
+
 //-------------------------------------------------------------------------------|>>|VARS
 
 const clientId = import.meta.env.SPOTIFY_CLIENT_ID;
@@ -46,8 +50,7 @@ async function getAccessToken(): Promise<string | null> {
   }
 }
 
-async function getTopTracks(): Promise<SpotifyTrack[]> {
-  const accessToken = await getAccessToken();
+async function getTopTracks(accessToken: string | null): Promise<SpotifyTrack[]> {
   if (!accessToken) return [];
 
   try {
@@ -73,9 +76,37 @@ async function getTopTracks(): Promise<SpotifyTrack[]> {
   }
 }
 
+async function getRecentlyPlayed(accessToken: string | null): Promise<RecentlyPlayedItem[]> {
+  if (!accessToken) return [];
+
+  try {
+    const response = await fetch(
+      'https://api.spotify.com/v1/me/player/recently-played?limit=3',
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      console.error('Petición de reproducciones recientes fallida:', response.status, response.statusText);
+      return [];
+    }
+
+    const data = await response.json();
+    return data.items ?? [];
+  } catch (error) {
+    console.error('Error en getRecentlyPlayed:', error);
+    return [];
+  }
+}
+
 //-------------------------------------------------------------------------------|>>|DRAw
 
-const tracks = await getTopTracks();
+const accessToken = await getAccessToken();
+const tracks = await getTopTracks(accessToken);
+const recentlyPlayed = await getRecentlyPlayed(accessToken);
 const visibleTracks = tracks.length
   ? tracks.map((track) => ({
       name: track.name ?? 'Unknown title',
@@ -87,6 +118,12 @@ const visibleTracks = tracks.length
       artist: 'Spotify',
       image: '/mex.png',
     }));
+
+const visibleRecentlyPlayed = recentlyPlayed.map((item) => ({
+  name: item.track?.name ?? 'Unknown title',
+  artist: item.track?.artists?.map((artist) => artist.name).join(', ') ?? 'Unknown artist',
+  image: item.track?.album?.images?.[0]?.url ?? '/mex.png',
+}));
 ---
 
 <article class="spotify-card">
@@ -98,4 +135,15 @@ const visibleTracks = tracks.length
       <img class="song-img" src={song.image} alt={song.name} />
     </div>
   ))}
+
+  <h2 class="section-title">Recently played</h2>
+  {visibleRecentlyPlayed.length ? visibleRecentlyPlayed.map((song) => (
+    <div class="song recent-song">
+      <h3 class="song-name">{song.name}</h3>
+      <p class="song-artist">{song.artist}</p>
+      <img class="song-img" src={song.image} alt={song.name} />
+    </div>
+  )) : (
+    <p class="empty-state">No recent plays available.</p>
+  )}
 </article>

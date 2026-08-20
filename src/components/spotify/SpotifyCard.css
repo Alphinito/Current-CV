@@ -12,6 +12,12 @@
   color: greenyellow;
 }
 
+.section-title {
+  margin-top: 1rem;
+  font-size: var(--t-big);
+  color: greenyellow;
+}
+
 .song {
   padding: .5rem;
   background-color: green;
@@ -33,6 +39,15 @@
   grid-column: 1/2;
   grid-row: 2/3;
   font-size: var(--t-small);
+}
+
+.recent-song {
+  grid-template-rows: repeat(2, min-content);
+}
+
+.empty-state {
+  font-size: var(--t-small);
+  font-weight: 300;
 }
 
 .song-img {
