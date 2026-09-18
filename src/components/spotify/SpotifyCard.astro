@@ -127,7 +127,10 @@ const visibleRecentlyPlayed = recentlyPlayed.map((item) => ({
 ---
 
 <article class="spotify-card">
-  <h1>My top 5 tracks on Spotify</h1>
+  <div class="spotify-heading">
+    <h1>My top 5 tracks on Spotify</h1>
+    <button id="spotify-reload" type="button" aria-label="Reload Spotify songs" title="Reload Spotify songs">Reload</button>
+  </div>
   {visibleTracks.map((song) => (
     <div class="song">
       <h2 class="song-name">{song.name}</h2>
@@ -147,3 +150,11 @@ const visibleRecentlyPlayed = recentlyPlayed.map((item) => ({
     <p class="empty-state">No recent plays available.</p>
   )}
 </article>
+
+<script>
+  const reloadButton = document.querySelector('#spotify-reload');
+
+  reloadButton?.addEventListener('click', () => {
+    window.location.reload();
+  });
+</script>

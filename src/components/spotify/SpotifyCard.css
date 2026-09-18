@@ -7,9 +7,34 @@
   border-radius: var(--m-border-radius);
 }
 
+.spotify-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .spotify-card h1 {
   font-size: var(--t-large);
   color: greenyellow;
+}
+
+#spotify-reload {
+  flex: 0 0 auto;
+  padding: .35rem .65rem;
+  border: 2px solid greenyellow;
+  border-radius: 999px;
+  background: transparent;
+  color: greenyellow;
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--t-small);
+}
+
+#spotify-reload:hover,
+#spotify-reload:focus-visible {
+  background: greenyellow;
+  color: var(--c-black);
 }
 
 .section-title {
