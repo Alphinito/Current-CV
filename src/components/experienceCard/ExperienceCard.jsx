@@ -2,6 +2,10 @@ import './ExperienceCard.css'
 import SingleCompany from './singleCompany/SingleCompany'
 import { useState, useEffect } from 'preact/hooks'
 
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+
 const ExperienceCard = () => {
     //-------------------------------------------------------------------------------|>>|VARS
     let [isOpen, setIsOpen] = useState(false)
@@ -40,7 +44,7 @@ const ExperienceCard = () => {
                     dateFinal="Current"
                     description="I currently work as a Software Developer on the API Core team, focusing on the Marketplace. We are responsible for several of the most critical components within the ecosystem, managing key APIs such as items, pictures, prices, purchases, and orders. Our team is dedicated to excellence and rigor in maintaining these services, which handle millions of requests per minute. I actively participate in the entire software development lifecycle—including analysis, design, RFC presentation, development, testing, deployment, and monitoring. My role involves integrating new features, resolving bugs, and optimizing code to meet the highest performance standards and fulfill both business and customer needs."
                     skillsAndTools={["GO", "Java", "BigQuery", "BigQueue", "Jenkins", "Doker", "AWS", "GCP", "KVS", "DS", "Redis", "MySQL", "IA Tools"]}
-                    img={`${import.meta.env.BASE_URL}companyResouces/meliIcon.svg`}
+                    img={`${baseUrl}companyResouces/meliIcon.svg`}
                 />
                 <SingleCompany 
                     companyName="CGA"
@@ -48,7 +52,7 @@ const ExperienceCard = () => {
                     dateFinal="2023"
                     description="As a Full Stack Developer, I built a comprehensive, SAP-integrated customer management platform from scratch. I developed and maintained the entire ecosystem, which included a MySQL database, a Node.js/Express backend API, and a React web application. The web app featured strict role-based access control, dynamic data visualization with interactive charts, and downloadable monthly Excel reports. Additionally, I worked on a mobile application that enabled field sales representatives to log client visits, track sales and quotes, and efficiently manage their daily schedules."
                     skillsAndTools={["JavaScript", "React", "Node.js", "Express", "MySQL", "Flutter"]}
-                    img={`${import.meta.env.BASE_URL}companyResouces/cgaIcon.svg`}
+                    img={`${baseUrl}companyResouces/cgaIcon.svg`}
                 />
             </ul>
         </details>
